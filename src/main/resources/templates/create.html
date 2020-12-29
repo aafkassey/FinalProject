@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>New Game</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/webjars/bootstrap/3.3.7/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link th:rel="stylesheet" th:href="@{assets/bootstrap-select-1.13.9/dist/css/bootstrap-select.css}"/>
+    <link th:rel="stylesheet" th:href="@{webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        #test {
+            position: inherit;
+            z-index: 2;
+            width: 100%;
+        }
+        .card-subhead{
+            font-family: fantasy;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" id="test">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/index.html">Pictionary Generator</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/createGame">Create Game</a></li>
+                    <li class=""><a href="/getGames">Game List</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </nav>
+    <div class="container my-5">
+        <div class ="center">
+            <h1 class="card-subhead"> Game List </h1>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col-lg-12">
+                <form action="#" th:action="@{/saveGame}" th:object="${game}" method="post">
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label class="col-form-label"> Game Title </label>
+                            <input type="text" th:field="*{gameTitle}" class="form-control" id="title" placeholder="Title">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="col-form-label"> Game Theme </label>
+                            <input type="text" th:field="*{theme}" class="form-control" id="theme" placeholder="Theme">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label class="col-form-label"> Game Rules </label>
+                                <select class="form-control" th:field="*{rules}" id="rules" multiple="multiple" th:name="id">
+                                    <option th:each="rule : ${T(com.game.PictionaryGenerator.model.Rules).values()}"
+                                            th:value="${rule.getRule()}" th:text="${rule.getRule()}"
+                                            th:checked="${rule.getRule()}"
+                                    >Rule</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <label> Topics </label>
+                            <table class="w3-table-all w3-card-*">
+                                <thead>
+                                <tr>
+                                    <th> Row Number </th>
+                                    <th> Topic </th>
+                                    <th> Hint </th>
+                                    <th>
+                                        <button type="submit"  name="action" value="Add Topic"> Add Topic </button>
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr th:each="topic, rowStat: *{topics}">
+                                    <td th:text="${rowStat.count}">1</td>
+                                    <td>
+                                        <input type="text" th:field="*{topics[__${rowStat.index}__].topic}">
+                                    </td>
+                                    <td>
+                                        <input type="text" th:field="*{topics[__${rowStat.index}__].hint}">
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <hr/>
+                    <div class="row">
+                        <div class="col-md-6 mt-5">
+                            <input type="submit" class="btn btn-primary" value="Submit">
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+    <script th:src="@{assets/bootstrap-select-1.13.9/dist/js/bootstrap-select.js}"></script>
+</body>
+</html>

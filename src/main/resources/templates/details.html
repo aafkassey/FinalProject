@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Game Details</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="/webjars/bootstrap/3.3.7/css/bootstrap-theme.min.css"/>
+        <link rel="stylesheet" href="/css/style.css" />
+        <link th:rel="stylesheet" th:href="@{assets/bootstrap-select-1.13.9/dist/css/bootstrap-select.css}"/>
+        <link th:rel="stylesheet" th:href="@{webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <style>
+            #test {
+                position: inherit;
+                z-index: 2;
+                width: 100%;
+            }
+            .card-subhead{
+                font-family: fantasy;
+            }
+            #info{
+                border: 2px solid #00b7a8;
+                /*background-color:aliceblue;*/
+                border-radius:4px;
+                font-size:16px;
+                padding:15px;
+                margin:5px;
+                width: 100%;
+            }
+            #rule{
+                padding: 5px 0px 0px 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top" id="test">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/index.html">Pictionary Generator</a>
+                </div>
+                <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class=""><a href="/createGame">Create Game</a></li>
+                        <li class=""><a href="/getGames">Game List</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class= "container my-5">
+            <div class ="center">
+                <h1 class="card-subhead"> Game Details </h1>
+            </div>
+            <hr/>
+            </p>
+            <div layout:fragment="content" class="row">
+                <div class="col-lg-12">
+                    <p align=justify id="info"><b><label> Game Title : <span th:text="${game.get().getGameTitle()}"></span></label></b>
+                </div>
+            </div>
+            <div layout:fragment="content" class="row">
+                <div class="col-lg-12">
+                    <p align=justify id="info"><b><label> Game Theme : <span th:text="${game.get().getTheme()}"></span></label></b></p>
+                </div>
+            </div>
+            <hr/>
+            <div layout:fragment="content" class="row">
+                <div class="col-lg-12">
+                    <label id="info"> Game Rules :
+                        <div id="rule" th:each="rule: ${game.get().getRules()}">
+                            <span th:text="${rule}"></span>
+                        </div>
+                    </label>
+                </div>
+            </div>
+            <hr/>
+            <div layout:fragment="content" class="row">
+                <div class="col-lg-12">
+                    <label id="info"> Game Topics : </label>
+                    <table id="info" class="w3-table-all w3-card-*">
+                        <thead>
+                            <tr>
+                                <th> Topic </th>
+                                <th> Hint </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="topic: ${game.get().getTopics()}">
+                                <td><span th:text="${topic.getTopic()}"></span></td>
+                                <td><span th:text="${topic.getHint()}"></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+<!--                        <div th:each="topic: ${game.get().getTopics()}">-->
+<!--                            <span th:text="${topic.getTopic()}"></span>-->
+<!--                            <span th:text="${topic.getHint()}"></span>-->
+<!--                        </div>-->
+                </div>
+            </div>
+        </div>
+        <hr/>
+        <script src="/webjars/jquery/1.11.1/jquery.min.js"></script>
+        <script src="/webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </body>
+</html>
