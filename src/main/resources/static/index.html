@@ -1,18 +1,23 @@
-<!DOCTYPE HTML>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <title>Pictionary</title>
         <link rel="stylesheet" href="/webjars/bootstrap/3.3.7/css/bootstrap.min.css"/>
         <link rel="stylesheet" href="/webjars/bootstrap/3.3.7/css/bootstrap-theme.min.css"/>
-        <link rel="stylesheet" href="/css/style.css" />
+<!--        <link rel="stylesheet" href="http://localhost:8080/css/style.css"/>-->
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <style>
+            h1, h2, h3, h4, h5, h6{
+                font-family: "Playfair Display";
+                letter-spacing: 5px;
+            }
+        </style>
     </head>
     <body>
-        <nav class="navbar navbar-inverse navbar-fixed-top" id="test">
+
+        <nav class="navbar navbar-inverse navbar-fixed-top" id="test" style="margin-bottom: 0;">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -25,16 +30,96 @@
                 </div>
                 <div id="navbar" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
+                        <li class="active"><a href="/index.html">Home</a></li>
                         <li class=""><a href="/createGame">Create Game</a></li>
                         <li class=""><a href="/getGames">Game List</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
-    <div class="container">
-        <div class="starter-template" layout:fragment="content"></div>
-    </div>
+        <header class="w3-display-container w3-content w3-wide" id="home">
+            <img class="w3-image" src="/images/background1.jpg" th:src="@{images/background1.jpg}" alt="background" width="1600" height="800">
+            <div class="w3-display-right w3-padding-large w3-opacity">
+                <h1 id="mainheading" class="w3-xxlarge"> Pictionary Generator </h1>
+                <h3 id="subheading" class="w3-xlarge"> A simple web application to store, create and
+                    reuse Pictionary templates to play the game with your friends, family and coworkers! </h3>
+            </div>
+        </header>
+        <hr/>
+        <div class="w3-content" style="max-width: 1100px">
 
+            <div class="w3-row w3-padding-64" id="about">
+                <div class="w3-col m6 w3-padding-large w3-hide-small" id="image">
+                    <img src="/images/creategame.PNG" th:src="@{images/creategame.PNG}" alt="creategame" class="w3-round"
+                    width="100%" height="420px">
+                </div>
+                <div class="w3-col m6 w3-padding-large">
+                    <h1 class="w3-center"> Create a Game </h1>
+                    <h4 class="w3-center"> Follow below instructions: </h4>
+                    <ol class="w3-large">
+                        <li> Click on <span class="w3-tag w3-light-grey">Create Game</span> on the header</li>
+                        <li> Fill in the information: </li>
+                        <ol class="w3-large w3-text-grey w3-hide-medium">
+                            <li> Enter the title of the Game</li>
+                            <li> Enter the theme of the Game</li>
+                            <li> Select multiple rules from list</li>
+                            <li> Click on <span class="w3-tag w3-light-grey">Add Topic</span> to add a row and enter Topic and Hint</li>
+                        </ol>
+                        <li> Click <span class="w3-tag w3-light-grey">Submit</span> when done!</Li>
+                    </ol>
+                </div>
+            </div>
+            <hr/>
+            <div class="w3-row w3-padding-64" id="about">
+                <div class="w3-col m6 w3-padding-large">
+                    <h1 class="w3-center"> List of Games </h1>
+                    <h4 class="w3-center"> Select a game from a list of games</h4>
+                    <p class="w3-large">
+                        Click on <span class="w3-tag w3-light-grey">Game List</span> on the header.
+                    </p>
+                    <p class="w3-large w3-text-grey w3-hide-medium">
+                        On this page, you will see a list of games based on when they were originally created.
+                    </p>
+                    <p class="w3-large w3-text-grey w3-hide-medium">
+                        Each game has an ID associated to it, that is how the system retrieves the information from the back-end database.
+                        The pages only shows the game ID, Title and Theme. For more details, click on <span class="w3-tag w3-light-grey">Details</span> button.
+                    </p>
+                    <p class="w3-large w3-text-grey w3-hide-medium">
+                        To delete a game, click on <span class="w3-tag w3-light-grey">Delete</span> button.
+                    </p>
+                </div>
+                <div class="w3-col m6 w3-padding-large w3-hide-small" id="image">
+                    <img src="/images/gamelist.PNG" th:src="@{images/gamelist.PNG}" alt="gamelist" class="w3-round"
+                         width="100%" height="420px">
+                </div>
+            </div>
+            <hr/>
+            <div class="w3-row w3-padding-64" id="about">
+                <div class="w3-col m6 w3-padding-large w3-hide-small" id="image">
+                    <img src="/images/gamedetails.PNG" th:src="@{images/gamedetails.PNG}" alt="gamedetails" class="w3-round"
+                         width="100%" height="420px">
+                </div>
+                <div class="w3-col m6 w3-padding-large">
+                    <h1 class="w3-center"> Game Details </h1>
+                    <h4 class="w3-center"> Details for a specific Game</h4>
+                    <p class="w3-large">
+                        This page can only be reach by clicking on <span class="w3-tag w3-light-grey">Details</span> button on Game List Page.
+                    </p>
+                    <p class="w3-large w3-text-grey w3-hide-medium">
+                        On this page, you will see full information regarding a specific game.
+                    </p>
+                    <p class="w3-large w3-text-grey w3-hide-medium">
+                        Each game has a Title and Theme. The list of the rules associated with that game.
+                        Finally, a list of topics and their corresponding hints are listed out in a table view.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+        <footer class="w3-center w3-light-grey w3-padding-32">
+            <p>Site created by Annie Kassey</p>
+            <p>Final Project CX50</p>
+        </footer>
     <script src="/webjars/jquery/1.11.1/jquery.min.js"></script>
     <script src="/webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </body>

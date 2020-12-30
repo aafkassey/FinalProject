@@ -4,33 +4,11 @@
         <title>Game Details</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
         <link rel="stylesheet" href="/webjars/bootstrap/3.3.7/css/bootstrap-theme.min.css"/>
-        <link rel="stylesheet" href="/css/style.css" />
+        <link rel="stylesheet" href="/css/style.css">
         <link th:rel="stylesheet" th:href="@{assets/bootstrap-select-1.13.9/dist/css/bootstrap-select.css}"/>
         <link th:rel="stylesheet" th:href="@{webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <style>
-            #test {
-                position: inherit;
-                z-index: 2;
-                width: 100%;
-            }
-            .card-subhead{
-                font-family: fantasy;
-            }
-            #info{
-                border: 2px solid #00b7a8;
-                /*background-color:aliceblue;*/
-                border-radius:4px;
-                font-size:16px;
-                padding:15px;
-                margin:5px;
-                width: 100%;
-            }
-            #rule{
-                padding: 5px 0px 0px 10px;
-            }
-        </style>
     </head>
     <body>
         <nav class="navbar navbar-inverse navbar-fixed-top" id="test">
@@ -46,6 +24,7 @@
                 </div>
                 <div id="navbar" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
+                        <li class=""><a href="/index.html">Home</a></li>
                         <li class=""><a href="/createGame">Create Game</a></li>
                         <li class=""><a href="/getGames">Game List</a></li>
                     </ul>
@@ -96,10 +75,6 @@
                             </tr>
                         </tbody>
                     </table>
-<!--                        <div th:each="topic: ${game.get().getTopics()}">-->
-<!--                            <span th:text="${topic.getTopic()}"></span>-->
-<!--                            <span th:text="${topic.getHint()}"></span>-->
-<!--                        </div>-->
                 </div>
             </div>
         </div>
