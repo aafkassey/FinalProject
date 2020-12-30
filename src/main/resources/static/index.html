@@ -13,10 +13,12 @@
                 font-family: "Playfair Display";
                 letter-spacing: 5px;
             }
+            a{
+                color: deepskyblue;
+            }
         </style>
     </head>
     <body>
-
         <nav class="navbar navbar-inverse navbar-fixed-top" id="test" style="margin-bottom: 0;">
             <div class="container">
                 <div class="navbar-header">
@@ -38,7 +40,7 @@
             </div>
         </nav>
         <header class="w3-display-container w3-content w3-wide" id="home">
-            <img class="w3-image" src="/images/background1.jpg" th:src="@{images/background1.jpg}" alt="background" width="1600" height="800">
+            <img class="w3-image" src="/images/background1.jpg" th:src="@{images/background1.jpg}" alt="background" >
             <div class="w3-display-right w3-padding-large w3-opacity">
                 <h1 id="mainheading" class="w3-xxlarge"> Pictionary Generator </h1>
                 <h3 id="subheading" class="w3-xlarge"> A simple web application to store, create and
@@ -47,7 +49,26 @@
         </header>
         <hr/>
         <div class="w3-content" style="max-width: 1100px">
+            <div class="w3-container w3-padding-32" id="contact">
+                <h1> How to Play Pictionary </h1>
+                <p>
+                    The main gist of the game is explained at this <a href="https://www.brightful.me/blog/how-to-play-pictionary/">site</a>.
+                </p>
+                <p>
+                    To summarize, it is a simple game where the audience has to guess what the "Picturist" is trying to communicate through their drawing!
+                </p>
+                <h2>How can this site help?</h2>
+                <p> This site can store game templates. The templates contain:</p>
+                <ul>
+                    <li>Game Title - Which is the name for the game.</li>
+                    <li>Game Theme - The theme for the template. (Example: Christmas, 4th of July)</li>
+                    <li>Game Rules - Rules the participant and audience will follow to play the game.</li>
+                    <li>Game Topics - Topics are what the picturist is going to draw and is what the audience has to guess.</li>
+                    <li>Game Hint - Hint is provided to help the audience guess what the topic is!</li>
+                </ul>
+            </div>
 
+            <hr/>
             <div class="w3-row w3-padding-64" id="about">
                 <div class="w3-col m6 w3-padding-large w3-hide-small" id="image">
                     <img src="/images/creategame.PNG" th:src="@{images/creategame.PNG}" alt="creategame" class="w3-round"
@@ -80,7 +101,7 @@
                     <p class="w3-large w3-text-grey w3-hide-medium">
                         On this page, you will see a list of games based on when they were originally created.
                     </p>
-                    <p class="w3-large w3-text-grey w3-hide-medium">
+                    <p class="w3-large">
                         Each game has an ID associated to it, that is how the system retrieves the information from the back-end database.
                         The pages only shows the game ID, Title and Theme. For more details, click on <span class="w3-tag w3-light-grey">Details</span> button.
                     </p>
