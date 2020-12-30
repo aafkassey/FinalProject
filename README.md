@@ -19,7 +19,7 @@ A simple web application to store, create and reuse Pictionary Templates to play
 
 #### CSS Styles
 
-*** W3Schools open stylesheet layouts are used for this project. Below is the line of code included in all the .HTML files ***
+**W3Schools open stylesheet layouts are used for this project. Below is the line of code included in all the .HTML files**
 
 ``` <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> ```
 
