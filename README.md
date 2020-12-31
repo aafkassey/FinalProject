@@ -4,19 +4,19 @@ A simple web application to store, create and reuse Pictionary Templates to play
 **Link to the code base -> https://github.com/aafkassey/FinalProject**
 
 ### Uses
-1. The user can create a new Game
-2. User can look a list of Games already in the database
-3. User can choose from a list of Games and view the specific details
+1. The user can create a new game
+2. User can look a list of games already in the database
+3. User can choose from a list of games and view the specific details
   1. Details include the Games Title, Theme, Rules and Topics
-4. Users can also wish to delete a Game
-5. The home page gives the User all the instructions on how to navigate through the site
+4. Users can also wish to delete a game
+5. The home page has all the instructions on how to navigate through the site
 
 # Setup
 
 ### Technologies used
 * Java, Spring Boot - Backend server code, uses embedded Tomcat
-* MongoDB - to store, retrieve and delete data from database
-* HTML, CSS, Thymeleaf, bootstrap - Front-end development code
+* MongoDB - To store, retrieve and delete data from database
+* HTML, CSS, Thymeleaf, Bootstrap - Front-end development code
 * Tiny bit of JQuery
 
 #### CSS Styles
@@ -62,7 +62,7 @@ Navigate to where MongoDB is installed. Navigate to /bin folder. Run below comma
   mongod.exe
 ```
 
-Build the project
+Build project
 --------------------
 
 ```
@@ -71,7 +71,7 @@ Maven command
   mvn clean install
 ```
 
-Run the application
+Run application
 -----------------------
 
 ```
@@ -80,7 +80,7 @@ Run the application
 
 Once springboot is up, it is initialized on port 8080. 
 
-Access the site
+Access website
 ---------------
 Make sure the welcome page is mapped. You should see this in the logs:
 ```
@@ -93,4 +93,4 @@ Link -> http://localhost:8080/index.html
 
 # Author and Developer
 
-Name: Annie Kassey
+**Name:** Annie Kassey
