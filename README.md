@@ -1,6 +1,8 @@
 # FinalProject
 A simple web application to store, create and reuse Pictionary Templates to play Pictionary games with friends, family and coworkers. 
 
+** Link to the code base -> https://github.com/aafkassey/FinalProject **
+
 ### Uses
 1. The user can create a new Game
 2. User can look a list of Games already in the database
@@ -30,6 +32,15 @@ A simple web application to store, create and reuse Pictionary Templates to play
 * MongoDB
 
 *Java 11, Maven and MongoDB have to be installed on the computer inorder to run the project*
+
+### Clone the project
+
+* HTTPS -> https://github.com/aafkassey/FinalProject.git
+* SSH -> git@github.com:aafkassey/FinalProject.git
+
+```
+  git clone https://github.com/aafkassey/FinalProject.git
+```
 
 ### Intellij Setup
 
