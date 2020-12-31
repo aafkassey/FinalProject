@@ -3,6 +3,10 @@ A simple web application to store, create and reuse Pictionary Templates to play
 
 **Link to the code base -> https://github.com/aafkassey/FinalProject**
 
+Video Presentation link -> https://youtu.be/pVcFB7QbQvs 
+
+[![Video Presentation](https://i9.ytimg.com/vi/pVcFB7QbQvs/mq1.jpg?sqp=CJyltf8F&rs=AOn4CLC5VdSDePMzM2zgwSEW4F2l432ZhQ)](https://youtu.be/pVcFB7QbQvs)
+
 ### Uses
 1. The user can create a new game
 2. User can look a list of games already in the database
