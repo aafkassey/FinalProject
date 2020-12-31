@@ -1,7 +1,7 @@
 # FinalProject
 A simple web application to store, create and reuse Pictionary Templates to play Pictionary games with friends, family and coworkers. 
 
-** Link to the code base -> https://github.com/aafkassey/FinalProject **
+**Link to the code base -> https://github.com/aafkassey/FinalProject**
 
 ### Uses
 1. The user can create a new Game
